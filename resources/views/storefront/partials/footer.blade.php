@@ -55,10 +55,24 @@
                         <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>{{ $settings->get('office_address') }}</li>
                     @endif
                     @if ($settings->get('contact_phone'))
-                        <li class="mb-2"><i class="bi bi-telephone me-2"></i>{{ $settings->get('contact_phone') }}</li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="tel:{{ preg_replace('/\s+/', '', $settings->get('contact_phone')) }}" class="text-decoration-none">
+                                {{ $settings->get('contact_phone') }}
+                            </a>
+                        </li>
+                    @endif
+
+                    @if ($settings->get('contact_phone_2'))
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            <a href="tel:{{ preg_replace('/\s+/', '', $settings->get('contact_phone_2')) }}" class="text-decoration-none">
+                                {{ $settings->get('contact_phone_2') }}
+                            </a>
+                        </li>
                     @endif
                     @if ($settings->get('contact_email'))
-                        <li class="mb-2"><i class="bi bi-envelope me-2"></i>{{ $settings->get('contact_email') }}</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:{{ $settings->get('contact_email') }}" class="text-decoration-none">{{ $settings->get('contact_email') }}</a></li>
                     @endif
                 </ul>
             </div>

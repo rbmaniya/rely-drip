@@ -22,13 +22,17 @@
                             <label class="form-label">Company Name</label>
                             <input type="text" name="company_name" value="{{ old('company_name', $settings->get('company_name')) }}" class="form-control">
                         </div> --}}
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label class="form-label">Contact Email</label>
                             <input type="email" name="contact_email" value="{{ old('contact_email', $settings->get('contact_email')) }}" class="form-control">
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label">Contact Number</label>
+                            <label class="form-label">Contact Number 1</label>
                             <input type="text" name="contact_phone" value="{{ old('contact_phone', $settings->get('contact_phone')) }}" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Contact Number 2</label>
+                            <input type="text" name="contact_phone_2" value="{{ old('contact_phone_2', $settings->get('contact_phone_2')) }}" class="form-control">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Office Address</label>

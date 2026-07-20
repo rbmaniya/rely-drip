@@ -20,16 +20,31 @@
         <div class="sec-ttl mb-4">Let's <span>Talk</span></div>
 
         <div class="d-flex flex-column gap-3 mb-4">
-            @if ($settings->get('contact_phone'))
-                <div>
-                    <div class="opt-lbl mb-1">WhatsApp / Phone</div>
-                    <div class="font-display fw-semibold">{{ $settings->get('contact_phone') }}</div>
-                </div>
-            @endif
+        @if ($settings->get('contact_phone') || $settings->get('contact_phone_2'))
+            <div>
+                <div class="opt-lbl mb-1">Phone</div>
+                @if ($settings->get('contact_phone'))
+                    <div class="font-display fw-semibold">
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $settings->get('contact_phone')) }}"
+                        class="text-decoration-none text-reset">
+                            {{ $settings->get('contact_phone') }}
+                        </a>
+                    </div>
+                @endif
+                @if ($settings->get('contact_phone_2'))
+                    <div class="font-display fw-semibold">
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $settings->get('contact_phone_2')) }}"
+                        class="text-decoration-none text-reset">
+                            {{ $settings->get('contact_phone_2') }}
+                        </a>
+                    </div>
+                @endif
+            </div>
+        @endif
             @if ($settings->get('contact_email'))
                 <div>
                     <div class="opt-lbl mb-1">Email</div>
-                    <div class="font-display fw-semibold" style="color:var(--blue);">{{ $settings->get('contact_email') }}</div>
+                    <div class="font-display fw-semibold" style="color:var(--blue);"><a href="mailto:{{ $settings->get('contact_email') }}" class="text-decoration-none">{{ $settings->get('contact_email') }}</a></div>
                 </div>
             @endif
             @if ($settings->get('social_instagram'))

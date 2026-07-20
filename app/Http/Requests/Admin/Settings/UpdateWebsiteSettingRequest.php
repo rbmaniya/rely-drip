@@ -18,6 +18,7 @@ class UpdateWebsiteSettingRequest extends FormRequest
             // 'company_name' => ['nullable', 'string', 'max:150'],
             'contact_email' => ['nullable', 'email', 'max:150'],
             'contact_phone' => ['nullable', 'string', 'max:30'],
+            'contact_phone_2' => ['nullable', 'string', 'max:30'],
             'office_address' => ['nullable', 'string', 'max:500'],
             'logo' => ['nullable', 'image', 'max:2048'],
             'favicon' => ['nullable', 'image', 'max:512'],
